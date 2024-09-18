@@ -100,3 +100,14 @@ RIOT-aware Completion in zsh                         {#zsh-completion-for-riot}
 For zsh users a RIOT-aware completion is provided in
 `dist/tools/zsh-completion`. Refer to the `README.md` in there for more details
 and installation instructions.
+
+
+Creating LST-Files
+==================
+
+Sometimes it is helpful to look in the assembly output of the compiler. 
+To switch on the LST-File generation, simply at following Line into your makefile:
+
+~~~~~~~~~~~~~~~~~~~
+CFLAGS += -Wa,-adhlns=$$(basename $$@).lst
+~~~~~~~~~~~~~~~~~~~
